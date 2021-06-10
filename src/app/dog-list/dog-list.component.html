@@ -1,0 +1,9 @@
+<h2>{{ Title }}</h2>
+
+<div> 
+    <button id="allDogs" class="btn btn-primary" (click)="getAll()">All</button>
+</div>
+
+<div class = "py-5">
+<app-dog-detail *ngFor = "let dog of dogs" [id]="dog.id" [dog]="dog"></app-dog-detail>
+</div>
