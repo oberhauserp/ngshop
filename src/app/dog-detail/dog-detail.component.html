@@ -1,11 +1,10 @@
-
-<div class="card border-primary mb-3" style="max-width: 18rem;">
+<div class="card" style="width: 19rem;">
     <div class="card-body">
-        <h2 class="card-title">{{dog.name}}</h2>
+        <h3 class="card-title" style="font-family: cursive;">{{dog.name}}</h3>
         <img [src]="dog.thumbnail" />
-        <p class="card-text" style="font-family:cursive"> good doggo </p>
         <p style="font-family: cursive;"> {{this.likes}} </p>
         <button (click)="addLike()" class="btn btn-primary">Like</button>
-        <button (click)="addFav()" class="btn btn-primary">Favorite</button>
+        <button (click)="addFavorite()" class="btn btn-primary">Favorite</button>
     </div>
 </div>
+

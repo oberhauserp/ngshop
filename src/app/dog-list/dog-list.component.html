@@ -2,8 +2,19 @@
 
 <div> 
     <button id="allDogs" class="btn btn-primary" (click)="getAll()">All</button>
+    <button id="favDogs" class="btn btn-primary" (click)="getFavs()">Favorite</button>
 </div>
 
-<div class = "py-5">
-<app-dog-detail *ngFor = "let dog of dogs" [id]="dog.id" [dog]="dog"></app-dog-detail>
+
+
+<div *ngIf="!popfav"> 
+    <div class="card-group">  
+        <app-dog-detail *ngFor = "let dog of dogs" [dog]="dog" ></app-dog-detail>
+    </div>
+</div>
+
+<div *ngIf="popfav">
+    <div class="card-group">   
+        <app-dog-detail *ngFor = "let fav of favs" [dog]="fav"></app-dog-detail>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Dog } from '../dog';
 import { DogsService } from '../dogs.service';
+import {FavoritesService } from '../favorites.service'
 
 @Component({
   selector: 'app-dog-detail',
@@ -12,7 +13,7 @@ export class DogDetailComponent implements OnInit {
   @Input() id: any;
   likes: number = 0;
 
-  constructor(private dogService: DogsService) { }
+  constructor(private dogService: DogsService, private favoritesService: FavoritesService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,11 @@ export class DogDetailComponent implements OnInit {
   addLike()
   {
     this.likes += 1
-    console.log(this.likes)
+  }
+
+  addFavorite()
+  {
+
+    this.favoritesService.add(this.dog)
   }
 }
